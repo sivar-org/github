@@ -49,13 +49,10 @@ on:
     branches: [ "main" ]
   pull_request:
 
-permissions:
-  contents: read
-
 jobs:
   terraform:
     name: 'Terraform'
-    runs-on: [self-hosted,t3.small]
+    runs-on: [self-hosted,t3.small,keepalive]
     environment: production
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
